@@ -1,4 +1,4 @@
-# Componente MDFe
+﻿# Componente MDFe
 
 A MDFe TecnoSpeed é uma solução pronta para ser integrada ao seu software, que realiza todas as etapas de emissão do Manifesto de Transporte Eletrônico, desde a geração do XML até a impressão do DAMDFe.
 
@@ -12,6 +12,6 @@ Veja como é fácil integrar a MDFe TecnoSpeed ao seu software
 
 ***
 
-**Para baixar a versão Trial, [clique aqui](#UrlTrial "Baixar o Componente MDFe  Trial")**.
+**Para baixar a versão Trial, [clique aqui](https://s3-sa-east-1.amazonaws.com/tecnospeed-trial/setup_mdfe_trial_11.1.62.6264.exe "Baixar o Componente MDFe  Trial")**.
 
 **Para ver uma lista com o histórico de mudanças, [clique aqui](https://github.com/tecnospeed/Componente-MDFe/blob/master/CHANGELOG.md "Changelog").**
