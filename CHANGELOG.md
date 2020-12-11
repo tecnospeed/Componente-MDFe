@@ -1,4 +1,8 @@
-﻿## [11.1.56.6310]
+﻿## [8.1.56.6311]
+
+* Corre&ccedil;&otilde;es e melhorias diversos.
+
+## [11.1.56.6310]
 
 **Correções:**
 
@@ -31,6 +35,7 @@
 ## [11.1.62.6264]
 
 * Corre&ccedil;&otilde;es e melhorias diversos.
+
 
 
 
