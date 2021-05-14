@@ -1,4 +1,10 @@
-﻿## [9.1.58.6322]
+﻿## [9.1.59.6324]
+
+**Novidades:**
+* DC-2789 - Compatibilizada a Nota técnica 2021.002 v1.00. Para maiores informações, acesse a documentação:
+[https://blog.tecnospeed.com.br/nota-tecnica-2021-002-do-mdf-e-ajustes-de-layout-e-evento-de-pagamento/](https://blog.tecnospeed.com.br/nota-tecnica-2021-002-do-mdf-e-ajustes-de-layout-e-evento-de-pagamento/)
+
+## [9.1.58.6322]
 
 **Novidades:**
 * DC-2173 - Compatibilizada a Nota técnica 2021.001 v1.00. Para maiores informações, acesse a documentação:
@@ -18,4 +24,5 @@
 **Correções:**
 
 - Alteração de funções que estavam sem retorno padrão.
+
 
