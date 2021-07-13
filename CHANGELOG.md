@@ -1,4 +1,9 @@
-﻿## [9.1.59.6324]
+﻿## [9.1.60.6325]
+
+**Correções:**
+* DC-3264 - Correção da assinatura do QR Code da emissão em contingência.
+
+## [9.1.59.6324]
 
 **Novidades:**
 * DC-2789 - Compatibilizada a Nota técnica 2021.002 v1.00. Para maiores informações, acesse a documentação:
@@ -24,5 +29,6 @@
 **Correções:**
 
 - Alteração de funções que estavam sem retorno padrão.
+
 
 
