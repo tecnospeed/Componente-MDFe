@@ -3,6 +3,9 @@
 
 **Novidades:**  
 * DCIT-1078 - Componente - MDFe - NT 2022.001 v1.00
+* DCIT-891 - Componente MDFe: Implementar propriedades usadas na Telemetria e Tecnoaccount
+* DCIT-1051 - Componente - MDFe - Disponibilizar apenas versões com TecnoAccount
+* DCIT-1058 - Componente - MDFe - Implementar envio de e-mail com SBB
 
 ## [9.1.60.6325]
 
