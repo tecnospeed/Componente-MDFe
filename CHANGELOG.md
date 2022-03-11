@@ -1,4 +1,10 @@
-﻿## [9.1.60.6325]
+	
+## [9.1.60.6345]
+
+**Novidades:**  
+* DCIT-1078 - Componente - MDFe - NT 2022.001 v1.00
+
+## [9.1.60.6325]
 
 **Correções:**
 * DC-3264 - Correção da assinatura do QR Code da emissão em contingência.
