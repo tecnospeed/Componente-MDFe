@@ -1,4 +1,12 @@
-	
+## [9.1.60.6351]
+
+**Novidades:**  
+* DCIT-1117 - Componente - MDFe - Licença Tecnoaccount "A licença do produto expirou para o emitente"
+* DCIT-1063 - Componente - MDFe - Revisar, Testar e Criar propriedades de E-mail
+* DCIT-1115 - Componente - MDFe - Atualizar documentações referente a NT 2022.001 v1.00
+* DCIT-1125 - Componentes - MDFe - Revisar/Atualizar dicionário de dados
+
+
 ## [9.1.60.6345]
 
 **Novidades:**  
