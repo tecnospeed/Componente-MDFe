@@ -1,3 +1,8 @@
+## [9.1.60.6361]
+**Correções:**
+* DSML-165 - LICENCE TECNOACCOUNT COM PROBLEMA
+
+
 ## [9.1.60.6351]
 
 **Novidades:**  
