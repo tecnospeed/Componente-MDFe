@@ -1,6 +1,7 @@
-## [9.1.60.6361]
+## [9.1.60.6365]
 **Correções:**
 * DSML-165 - LICENCE TECNOACCOUNT COM PROBLEMA
+* DSP4G-222 - Remover arquivos de templates da instalação
 
 
 ## [9.1.60.6351]
