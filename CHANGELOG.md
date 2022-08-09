@@ -1,7 +1,25 @@
+## [9.1.60.6375]
+**Correções:**
+* DICT-775 - Ajuste layout retrato.rtm cortando valores na impressão de condutores.
+
+**Novidades:**
+
+* DCIT-891 - Adicionadas as propriedades CnpjSoftwareHouse, TokenSoftwareHouse e a propriedade DiagnosticMode no arquivo ini.
+* DSP4G-222 - Migrando os arquivos de templates para implementação "hardcoded".
+* DSP4G-143 - Adicionado no menu do Windows a opção de desinstalação do pacote de dependências.
+
+* DCIT-1058 - Nova propriedade UseSecureBlackBox para envio de e-mail com SBB.
+* DCIT-1033 - Ajustes no componente para que possa ser utilizado em Windows com formato de moeda diferente de PT-BR.
+* DCIT-1078 - Implementada a NT 2022.001 v.001. 
+   Para mais informações da NT: https://blog.tecnospeed.com.br/mdf-e-nota-tecnica-2022-001
+* DCIT-1063 - Foram adicionadas as propriedades QtdeTentativasEmail e UseTLS nas configurações de E-mail, podendo ser configurado via propriedade ou por ini.
+* DCIT-1104 - Ajustado validação de esquemas dos eventos para usar o xsd especifico de cada evento quando usar a propriedade ValidarEsquemaAntesEnvio
+
 ## [9.1.60.6365]
 **Correções:**
 * DSML-165 - LICENCE TECNOACCOUNT COM PROBLEMA
 * DSP4G-222 - Remover arquivos de templates da instalação
+
 
 
 ## [9.1.60.6351]
