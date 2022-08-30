@@ -1,3 +1,8 @@
+
+## [9.1.60.6379]
+**Correções:**
+* DSML-255 - Geração incorreta versão com TencoAccount
+
 ## [9.1.60.6375]
 **Correções:**
 * DICT-775 - Ajuste layout retrato.rtm cortando valores na impressão de condutores.
