@@ -1,4 +1,10 @@
 
+
+## [9.1.60.6380]
+**Novidades**
+* DSP4G-67  - Adicionado método TestarEmailConfig para validar as configurações de email, para mais informações acesse: https://tecnospeed.zendesk.com/knowledge/articles/8235194906263/pt-br?brand_id=360000386474
+* DSP4G-398 - Adicionado ao pacote de instalação do componente o arquivo "IDs_LIBs_MDFe.ini" contendo os ID´s das OCXs.
+
 ## [9.1.60.6379]
 **Correções:**
 * DSML-255 - Geração incorreta versão com TencoAccount
