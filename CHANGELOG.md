@@ -1,3 +1,20 @@
+﻿## [9.1.60.6388]
+
+<span dir="">#</span>Leame
+
+**Plugin MDFe**
+
+ **Novidades**
+
+* [DSP4G-606](#) - Disponibilizado método ExportarPreverDanfe. Mais Detalhes em:[ExportarPreverDanfe](https://tecnospeed.zendesk.com/knowledge/articles/9980489147799/pt-br?brand_id=360000386474)
+* [DSP4G-790](#) - Compatibilizado com atualizações do componente indy
+
+**Correções**
+
+* DSML-372 - Ajuste no campo Type no arquivo mdfe_tecnoaccount.iss
+* DSML-444 - Manager SAAS : MDFe: Erro de arquivo mdfeServidoresProd.ini ao emitir MDFe na UF AP
+* DSML-483 - Corrigido o nome do executável do Dependêncies Tecnoaccount.
+
 
 
 ## [9.1.60.6380]
@@ -81,6 +98,7 @@
 **Correções:**
 
 - Alteração de funções que estavam sem retorno padrão.
+
 
 
 
