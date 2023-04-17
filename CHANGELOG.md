@@ -1,11 +1,9 @@
-﻿## [9.1.60.6388]
+## [9.1.60.6389]
+**Correções**
+* DSML-532 - Manager eDoc: MDFe Personalização .rtm - Criação da nova propriedade "ImprimirUFsPercurso"
 
-<span dir="">#</span>Leame
-
-**Plugin MDFe**
-
+## [9.1.60.6388]
  **Novidades**
-
 * [DSP4G-606](#) - Disponibilizado método ExportarPreverDanfe. Mais Detalhes em:[ExportarPreverDanfe](https://tecnospeed.zendesk.com/knowledge/articles/9980489147799/pt-br?brand_id=360000386474)
 * [DSP4G-790](#) - Compatibilizado com atualizações do componente indy
 
