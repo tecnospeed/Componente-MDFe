@@ -1,6 +1,6 @@
 ﻿## [9.1.60.6395]
-
-* Corre&ccedil;&otilde;es e melhorias diversos.
+**Novidades**
+* DSML-749 - Versão Componente MDFe MOC 3.00b
 
 ## [9.1.60.6389]
 **Correções**
