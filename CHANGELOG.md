@@ -1,3 +1,7 @@
+﻿## [9.1.60.6395]
+
+* Corre&ccedil;&otilde;es e melhorias diversos.
+
 ## [9.1.60.6389]
 **Correções**
 * DSML-532 - Manager eDoc: MDFe Personalização .rtm - Criação da nova propriedade "ImprimirUFsPercurso"
@@ -96,6 +100,7 @@
 **Correções:**
 
 - Alteração de funções que estavam sem retorno padrão.
+
 
 
 
