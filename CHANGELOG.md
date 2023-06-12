@@ -4,7 +4,7 @@
 
 ## [9.1.60.6389]
 **Correções**
-* DSML-532 - Manager eDoc: MDFe Personalização .rtm - Criação da nova propriedade "ImprimirUFsPercurso"
+* DSML-532 - Personalização .rtm - Criação da nova propriedade "ImprimirUFsPercurso"
 
 ## [9.1.60.6388]
  **Novidades**
@@ -14,7 +14,7 @@
 **Correções**
 
 * DSML-372 - Ajuste no campo Type no arquivo mdfe_tecnoaccount.iss
-* DSML-444 - Manager SAAS : MDFe: Erro de arquivo mdfeServidoresProd.ini ao emitir MDFe na UF AP
+* DSML-444 - Erro de arquivo mdfeServidoresProd.ini ao emitir MDFe na UF AP
 * DSML-483 - Corrigido o nome do executável do Dependêncies Tecnoaccount.
 
 
