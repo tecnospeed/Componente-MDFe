@@ -12,6 +12,6 @@ Veja como é fácil integrar a MDFe TecnoSpeed ao seu software
 
 ***
 
-**Para baixar a versão Trial, [clique aqui](https://s3-sa-east-1.amazonaws.com/tecnospeed-trial/setup_mdfe_tecnoaccount9.1.61.6396.exe "Baixar o Componente MDFe  Trial")**.
+**Para baixar a versão Trial, [clique aqui](https://s3-sa-east-1.amazonaws.com/tecnospeed-trial/setup_mdfe_tecnoaccount9.1.62.6399.exe "Baixar o Componente MDFe  Trial")**.
 
 **Para ver uma lista com o histórico de mudanças, [clique aqui](https://github.com/tecnospeed/Componente-MDFe/blob/master/CHANGELOG.md "Changelog").**
