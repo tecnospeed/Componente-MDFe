@@ -1,4 +1,8 @@
-﻿## [9.1.61.6396]
+﻿## [9.1.62.6399]
+
+* Corre&ccedil;&otilde;es e melhorias diversos.
+
+## [9.1.61.6396]
 
 **Novidades**
 * DSML-749 - Versão Componente MDFe MOC 3.00b
@@ -105,6 +109,7 @@
 **Correções:**
 
 - Alteração de funções que estavam sem retorno padrão.
+
 
 
 
