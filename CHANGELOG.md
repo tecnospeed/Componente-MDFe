@@ -1,3 +1,9 @@
+﻿## [10.1.62.6400]
+
+**Novidade**
+
+- DSML-883 - Atualizado pacotes de esquemas referente a NT 2023.002, contendo as alterações no XML de retorno. Mais detalhes em : https://blog.tecnospeed.com.br/manifesto-documento-fiscal/
+
 
 ## [9.1.61.6396]
 
@@ -106,6 +112,7 @@
 **Correções:**
 
 - Alteração de funções que estavam sem retorno padrão.
+
 
 
 
