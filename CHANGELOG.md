@@ -1,4 +1,10 @@
-﻿## [10.1.62.6400]
+﻿## [10.1.62.6402]
+
+**Correções**
+
+DSML-1066 - Foi alterado o RTM da versão 3.00a para mostrar as `Informações da Composição de Carga`
+
+## [10.1.62.6400]
 
 **Novidade**
 
@@ -112,6 +118,7 @@
 **Correções:**
 
 - Alteração de funções que estavam sem retorno padrão.
+
 
 
 
