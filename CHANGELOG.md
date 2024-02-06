@@ -1,4 +1,16 @@
-﻿## [10.1.62.6402]
+﻿## [10.1.63.6406]
+
+**Novidade**
+
+DSP4G-776 - integração por arquivo no formato JSON pelo novos metodos:
+[ConverterJsonParaXml](https://tecnospeed.zendesk.com/hc/pt-br/articles/20973871084951) e [ConverterJonParaTx2](https://tecnospeed.zendesk.com/hc/pt-br/articles/20973754738839)
+
+**Correções**
+
+DSML-1098 - Resolução do erro ao configurar o valor da propriedade VersaoManual utilizando OCX. O valor configurado era alterado para 'vm30a' quando informado 'vm30b'.
+
+
+## [10.1.62.6402]
 
 **Correções**
 
@@ -118,6 +130,7 @@ DSML-1066 - Foi alterado o RTM da versão 3.00a para mostrar as `Informações d
 **Correções:**
 
 - Alteração de funções que estavam sem retorno padrão.
+
 
 
 
