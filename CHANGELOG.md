@@ -1,4 +1,12 @@
-﻿## [10.1.63.6406]
+﻿## [10.1.64.6410]
+
+**Novidades**
+
+* DSML-1114 - Compatibilizado o componente com a [Nota Técnica 2024.001](https://blog.tecnospeed.com.br/mdf-e-nota-tecnica-2024-001-altera-regras-de-validacao-do-mdf-e);
+
+* DSML-1016 - Compatibilizado o componente com Delphi 12 Athenas;
+
+## [10.1.63.6406]
 
 **Novidade**
 
@@ -130,6 +138,7 @@ DSML-1066 - Foi alterado o RTM da versão 3.00a para mostrar as `Informações d
 **Correções:**
 
 - Alteração de funções que estavam sem retorno padrão.
+
 
 
 
