@@ -1,4 +1,14 @@
-﻿## [10.1.64.6410]
+﻿## [10.1.65.6413]
+
+**Novidades**
+
+* DSML-1144 - Desativação dos serviços de `Recepção Lote (assíncrono)` e de `Consulta Retorno Recepção` [Nota Técnica 2024.001](https://blog.tecnospeed.com.br/mdf-e-manual-de-orientacoes-ao-contribuinte-versao-3-00b);
+
+**Correções**
+
+* DSP4G-1507 - Melhoria na validação de license para executar apenas quando for comunicar com sefaz
+
+## [10.1.64.6410]
 
 **Novidades**
 
@@ -138,6 +148,7 @@ DSML-1066 - Foi alterado o RTM da versão 3.00a para mostrar as `Informações d
 **Correções:**
 
 - Alteração de funções que estavam sem retorno padrão.
+
 
 
 
