@@ -1,4 +1,10 @@
-﻿## [10.1.65.6413]
+﻿## [10.0.66.6415]
+
+**Novidades**
+
+* [DSML-1243](https://tecnospeed.atlassian.net/browse/DSML-1243) - Implementação da NT 2024.002: adição de campos para prestação parcial.
+
+## [10.1.65.6413]
 
 **Novidades**
 
@@ -148,6 +154,7 @@ DSML-1066 - Foi alterado o RTM da versão 3.00a para mostrar as `Informações d
 **Correções:**
 
 - Alteração de funções que estavam sem retorno padrão.
+
 
 
 
