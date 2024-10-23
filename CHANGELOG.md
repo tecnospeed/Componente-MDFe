@@ -1,4 +1,8 @@
-﻿## [10.0.66.6415]
+﻿## [10.1.66.6416]
+
+* Corre&ccedil;&otilde;es e melhorias diversos.
+
+## [10.0.66.6415]
 
 **Novidades**
 
@@ -154,6 +158,7 @@ DSML-1066 - Foi alterado o RTM da versão 3.00a para mostrar as `Informações d
 **Correções:**
 
 - Alteração de funções que estavam sem retorno padrão.
+
 
 
 
