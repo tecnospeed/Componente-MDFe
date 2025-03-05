@@ -1,4 +1,10 @@
-﻿## [10.1.66.6416]
+﻿## [10.1.67.20]
+
+**Correções**
+
+* 25.02.27 |DSML-1592 - Ajuste classe spdINI.pas componentes oAuth
+
+## [10.1.66.6416]
 
 * Corre&ccedil;&otilde;es e melhorias diversos.
 
@@ -158,6 +164,7 @@ DSML-1066 - Foi alterado o RTM da versão 3.00a para mostrar as `Informações d
 **Correções:**
 
 - Alteração de funções que estavam sem retorno padrão.
+
 
 
 
