@@ -1,5 +1,9 @@
 ﻿## [10.1.67.20]
 
+**Novidades**
+
+* 25.02.27 |DSP4G-1725 - AdicionadoO novo método de validação OAuth
+
 **Correções**
 
 * 25.02.27 |DSML-1592 - Ajuste classe spdINI.pas componentes oAuth
