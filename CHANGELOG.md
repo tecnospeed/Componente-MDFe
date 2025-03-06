@@ -2,7 +2,7 @@
 
 **Novidades**
 
-* 25.02.27 |DSP4G-1725 - AdicionadoO novo método de validação OAuth
+* 25.02.27 |DSP4G-1725 - Adicionado novo método de validação OAuth
 
 **Correções**
 
