@@ -1,4 +1,10 @@
-﻿## [10.1.67.20]
+﻿## [11.1.0.1]
+
+**Novidades**
+
+* [DSML-1745](https://tecnospeed.atlassian.net/browse/DSML-1745) - Atualizando o componente com a [NT 2025.001](https://blog.tecnospeed.com.br/nota-tecnica-mdfe-2025-001/).
+
+## [10.1.67.20]
 
 **Novidades**
 
@@ -168,6 +174,7 @@ DSML-1066 - Foi alterado o RTM da versão 3.00a para mostrar as `Informações d
 **Correções:**
 
 - Alteração de funções que estavam sem retorno padrão.
+
 
 
 
