@@ -1,6 +1,11 @@
 ﻿## [11.1.0.2]
 
+ **Novidades**
+
+* [DSML-1745](https://tecnospeed.atlassian.net/browse/DSML-1745) - Atualizando o componente com a [NT 2025.001](https://blog.tecnospeed.com.br/nota-tecnica-mdfe-2025-001/).
+
 **Correção**
+
 hotfix - tlb quebrada para delphi 7
 
 ## [11.1.0.1]
