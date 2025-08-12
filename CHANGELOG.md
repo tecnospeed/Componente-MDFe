@@ -1,4 +1,9 @@
-﻿## [11.1.0.1]
+﻿## [11.1.0.2]
+
+**Correção**
+hotfix - tlb quebrada para delphi 7
+
+## [11.1.0.1]
 
 **Novidades**
 
@@ -174,6 +179,7 @@ DSML-1066 - Foi alterado o RTM da versão 3.00a para mostrar as `Informações d
 **Correções:**
 
 - Alteração de funções que estavam sem retorno padrão.
+
 
 
 
