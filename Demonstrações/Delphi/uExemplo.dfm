@@ -1,10 +1,10 @@
 object FrmExemplo: TFrmExemplo
-  Left = 568
-  Top = 120
+  Left = 601
+  Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
   BorderStyle = bsSingle
   Caption = 'Demonstra'#231#227'o do Componente MDFe'
-  ClientHeight = 750
+  ClientHeight = 646
   ClientWidth = 669
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -22,7 +22,7 @@ object FrmExemplo: TFrmExemplo
     Left = 0
     Top = 0
     Width = 669
-    Height = 750
+    Height = 646
     Align = alClient
     TabOrder = 0
   end
@@ -78,10 +78,9 @@ object FrmExemplo: TFrmExemplo
           Font.Style = [fsBold]
           ParentFont = False
           TabOrder = 5
-          OnClick = btnConsultarReciboMDFeClick
         end
         object btnCancelarMDFe: TBitBtn
-          Left = 109
+          Left = 219
           Top = 246
           Width = 200
           Height = 25
@@ -297,6 +296,21 @@ object FrmExemplo: TFrmExemplo
           EditLabel.ParentFont = False
           TabOrder = 15
         end
+        object btnGerarDSReforma: TButton
+          Left = 7
+          Top = 246
+          Width = 200
+          Height = 25
+          Caption = '4.3 Gerar XML Reforma via DS'
+          Font.Charset = ANSI_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'MS Sans Serif'
+          Font.Style = [fsBold]
+          ParentFont = False
+          TabOrder = 16
+          OnClick = btnGerarDSReformaClick
+        end
       end
       object gbConfig: TGroupBox
         Left = 5
@@ -309,7 +323,7 @@ object FrmExemplo: TFrmExemplo
         object lblInfo: TLabel
           Left = 8
           Top = 234
-          Width = 200
+          Width = 191
           Height = 13
           Caption = 'Siga as opera'#231#245'es na ordem assinalada.'
           Color = clBtnFace

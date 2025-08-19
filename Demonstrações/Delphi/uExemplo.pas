@@ -76,6 +76,7 @@ type
     edtCNPJSoftwareHouse: TLabeledEdit;
     edtTokenSoftwareHouse: TLabeledEdit;
     lblInfo: TLabel;
+    btnGerarDSReforma: TButton;
     // Inicialização do formulário
     procedure FormCreate(Sender: TObject);
     // Destruição do formulário
@@ -99,7 +100,7 @@ type
     // 6.Enviar MDFe
     procedure btnEnviarMDFeClick(Sender: TObject);
     // 7. Consultar Recibo MDFe
-    procedure btnConsultarReciboMDFeClick(Sender: TObject);
+
     // 8.Consultar MDFe
     procedure btnConsultarMDFeClick(Sender: TObject);
     // 9.Encerrar MDFe
@@ -111,6 +112,8 @@ type
     // 12.Exportar para PDF
     procedure btnExportarPDFClick(Sender: TObject);
     procedure FormShow(Sender: TObject);
+    procedure btnGerarDSReformaClick(Sender: TObject);
+   
 
 
 
@@ -118,7 +121,7 @@ type
     MDFe: TspdMDFe;
     MDFeDataSet: TspdMDFeDatasetX;
     fUtils: TspdGovUtils;
-
+     _NumeroSerie, _NumeroMDFe : String;
     // guarda o tipo da configuração, pode ser via arquivo ini ou propriedades configuradas no componente.
     fTipoConfiguracao: TTipoConfiguracao;
     // guarda o nome do arquivo do XML Tomador Serviço para utilizá-lo posteriormente na impressão
@@ -166,9 +169,9 @@ begin
   MDFe := TspdMDFe.Create(nil);
   MDFeDataSet := TspdMDFeDatasetX.Create(nil);
   fUtils := TspdGovUtils.Create(nil);
-  edtCNPJSoftwareHouse.text := '00000000000000';
-  edtCNPJ.text := '00000000000000';
-
+  edtCNPJSoftwareHouse.text := '';
+  edtCNPJ.text := '';
+                                           
   MDFe.LoadConfig();
 
   FrmExemplo.Caption := 'Tecnospeed MDFe - Versão: ' + MDFe.Versao;
@@ -370,7 +373,8 @@ procedure TFrmExemplo.btnConfiguraSHClick(Sender: TObject);
 begin
   try
     edtCNPJSoftwareHouse.SetFocus;
-    MDFe.ConfigurarSoftwareHouse(edtCNPJSoftwareHouse.Text, '');
+      MDFe.ConfigurarSoftwareHouse(edtCNPJSoftwareHouse.Text, '');
+     
   except
     on e: Exception do
       raise EspdMDFeException.Create(e.Message);
@@ -433,6 +437,7 @@ begin
     OpnDlgTx2.FileName := 'mdfe.tx2';
     if OpnDlgTx2.Execute then
     begin
+      
       aXML := MDFe.ConverterTx2ParaXml(OpnDlgTx2.FileName);
       UpdateOutput(aXML);
       UpdateStatus('XML via Tx2 gerado com sucesso.');
@@ -445,19 +450,19 @@ end;
 
 procedure TFrmExemplo.btnGerarXMLViaDataSetClick(Sender: TObject);
 procedure DadosDoMDFe(aDs : TspdMDFeDataSetX);
-  var
-   _NRNota : String;
+
   begin
+      _NumeroSerie  := InputBox('MDF-e','Insira o Número da Série:','1');
+      _NumeroMDFe   := InputBox('MDF-e','Insira o Número do MDF-e: ','1');
+
             MDFeDataSet.SetFieldAsString('versao_2', '3.00');
             MDFeDataSet.SetFieldAsString('cUF_5', '41');
             MDFeDataSet.SetFieldAsString('tpAmb_6', '2');
-            MDFeDataSet.SetFieldAsString('tpEmit_7', '2');
+            MDFeDataSet.SetFieldAsString('tpEmit_7', '2');                                       
             MDFeDataSet.SetFieldAsString('mod_8', '58');
-            MDFeDataSet.SetFieldAsString('serie_9', '41');
+            MDFeDataSet.SetFieldAsString('serie_9', _NumeroSerie);
 
-            _NRNota := IntToStr(Random(100000));
-
-            MDFeDataSet.SetFieldAsString('nMDF_10', _NRNota);
+            MDFeDataSet.SetFieldAsString('nMDF_10', _NumeroMDFe);
             MDFeDataSet.SetFieldAsString('cMDF_11', '00000001');
             MDFeDataSet.SetFieldAsString('cDV_12', '1');
             MDFeDataSet.SetFieldAsString('modal_13', '1');
@@ -598,7 +603,8 @@ procedure DadosDoMDFe(aDs : TspdMDFeDataSetX);
 begin
   edtRecibo.clear;
   edtProtocolo.clear;
-
+  _NumeroSerie  := InputBox('NF-e','Insira o Número da Série:','1');
+  _NumeroMDFe     := InputBox('NF-e','Insira o Número da Nota: ','1');
   MDFeDataSet.MappingFileName := MDFe.DiretorioEsquemas + '3.00\Mapping.txt';
   MDFeDataSet.ConfigSection := 'XMLENVIO';
 
@@ -678,9 +684,8 @@ begin
     try
         UpdateStatus('Enviando MDFe...');
         _returnValue := mOutput.Text;
-        _returnValue := MDFe.EnviarMDFe('1', _returnValue);
+        _returnValue := MDFe.EnviarMDFeSincrono( _returnValue);
         UpdateOutput(_returnValue);
-        edtRecibo.Text := spdMDFeUtils.GetValueTag('nRec', _returnValue);
         UpdateStatus('Envio Ok.');
     finally
       (Sender as TWinControl).Enabled := true;
@@ -692,35 +697,6 @@ begin
 end;
 
 // 7. Consultar Recibo MDFe
-procedure TFrmExemplo.btnConsultarReciboMDFeClick(Sender: TObject);
-var
-  _returnValue: string;
-begin
-  CheckConfig;
-  try
-    (Sender as TWinControl).Enabled := False;
-    try
-      if edtRecibo.Text <> '' then
-      begin
-        UpdateStatus('Consultando recibo...');
-        _returnValue := MDFe.ConsultarReciboMDFe(edtRecibo.Text);
-        UpdateOutput(_returnValue);
-        edtProtocolo.Text := spdMDFeUtils.GetValueTag('nProt', _returnValue);
-        UpdateStatus('Consulta ok...');
-      end
-      else
-      begin
-        ShowMessage('Favor informar um recibo antes de prosseguir');
-        edtRecibo.SetFocus;
-      end;
-    finally
-      (Sender as TWinControl).Enabled := true;
-    end;
-  except
-    UpdateStatus(' falha', False, true);
-    raise ;
-  end;
-end;
 
 // 8.Consultar MDFe
 procedure TFrmExemplo.btnConsultarMDFeClick(Sender: TObject);
@@ -881,6 +857,140 @@ begin
         MDFe.ExportarMDFe(_XML, '', fePDF, svDlgExportar.FileName);
         UpdateStatus('Geração de PDF realizada com sucesso em!');
       end;
+end;
+
+procedure TFrmExemplo.btnGerarDSReformaClick(Sender: TObject);
+begin     
+edtRecibo.clear;
+edtProtocolo.clear;
+
+_NumeroSerie  := InputBox('NF-e','Insira o Número da Série:','1');
+_NumeroMDFe     := InputBox('NF-e','Insira o Número da Nota: ','1');
+// Inicia o dataset principal do MDF-e
+
+MDFeDataSet.MappingFileName := MDFe.DiretorioEsquemas + '3.00b\Mapping.txt';
+MDFeDataSet.ConfigSection := 'XMLENVIO';
+MDFeDataSet.CreateDatasets;
+MDFeDataSet.EmptyDataSets;
+MDFeDataSet.Versao := '3.00';
+MDFeDataSet.IdLote := '1';
+
+MDFeDataSet.Include;
+
+MDFeDataSet.SetFieldAsString('versao_2', '3.00');
+MDFeDataSet.SetFieldAsString('cUF_5', '41');
+MDFeDataSet.SetFieldAsString('tpAmb_6', '2');
+MDFeDataSet.SetFieldAsString('tpEmit_7', '1');
+MDFeDataSet.SetFieldAsString('mod_8', '58');
+MDFeDataSet.SetFieldAsString('serie_9', '9');
+MDFeDataSet.SetFieldAsString('nMDF_10', '842');
+MDFeDataSet.SetFieldAsString('cMDF_11', '00000842');
+MDFeDataSet.SetFieldAsString('cDV_12', '7');
+MDFeDataSet.SetFieldAsString('modal_13', '4');
+MDFeDataSet.SetFieldAsString('dhEmi_14', '2024-03-15T10:30:00-03:00');
+MDFeDataSet.SetFieldAsString('tpEmis_15', '1');
+MDFeDataSet.SetFieldAsString('procEmi_16', '0');
+MDFeDataSet.SetFieldAsString('verProc_17', '5.0');
+MDFeDataSet.SetFieldAsString('UFIni_18', 'SP');
+MDFeDataSet.SetFieldAsString('UFFim_19', 'RJ');
+MDFeDataSet.SetFieldAsString('CNPJ_26', '29062609000177');
+MDFeDataSet.SetFieldAsString('IE_27', '123456789');
+
+MDFeDataSet.SetFieldAsString('xNome_28', 'TRANSPORTES AQUAVIÁRIOS LTDA');
+MDFeDataSet.SetFieldAsString('xFant_29', 'TRANSAQUA');
+MDFeDataSet.SetFieldAsString('xLgr_31', 'AV. PORTUÁRIA');
+MDFeDataSet.SetFieldAsString('nro_32', '100');
+MDFeDataSet.SetFieldAsString('xCpl_33', 'SALA 201');
+MDFeDataSet.SetFieldAsString('xBairro_34', 'PORTO');
+MDFeDataSet.SetFieldAsString('cMun_35', '3550308');
+MDFeDataSet.SetFieldAsString('xMun_36', 'SANTOS');
+MDFeDataSet.SetFieldAsString('CEP_37', '11015300');
+MDFeDataSet.SetFieldAsString('UF_38', 'SP');
+MDFeDataSet.SetFieldAsString('fone_39', '1333334444');
+MDFeDataSet.SetFieldAsString('email_40', 'contato@transaqua.com.br');
+
+MDFeDataSet.SetFieldAsString('versaoModal_42', '3.00');
+MDFeDataSet.SetFieldAsString('qCTe_69', '1');
+MDFeDataSet.SetFieldAsString('qNFe_71', '0');
+MDFeDataSet.SetFieldAsString('vCarga_73', '75000.00');
+MDFeDataSet.SetFieldAsString('cUnid_74', '01');
+MDFeDataSet.SetFieldAsString('qCarga_75', '50000.0000');
+MDFeDataSet.SetFieldAsString('infAdFisco_79', '');
+MDFeDataSet.SetFieldAsString('infCpl_80', 'TRANSPORTE DE CONTEINERES');
+
+MDFeDataSet.SetFieldAsString('indCarregaPosterior_101', '1');
+MDFeDataSet.SetFieldAsString('tpCarga_200', '12');
+MDFeDataSet.SetFieldAsString('xProd_201', 'CONTEINERES');
+MDFeDataSet.SetFieldAsString('cEAN_202', '7891234567890');
+MDFeDataSet.SetFieldAsString('NCM_203', '86090000'); 
+
+// Informações do município de carregamento
+MDFeDataSet.IncludePart('infMunCarrega');
+MDFeDataSet.SetFieldAsString('cMunCarrega_21', '3550308');
+MDFeDataSet.SetFieldAsString('xMunCarrega_22', 'SANTOS');
+MDFeDataSet.SavePart('infMunCarrega');
+
+// Informações do município de descarregamento
+MDFeDataSet.IncludePart('infMunDescarga');
+MDFeDataSet.SetFieldAsString('cMunDescarga_46', '3304557');
+MDFeDataSet.SetFieldAsString('xMunDescarga_47', 'RIO DE JANEIRO');
+MDFeDataSet.SavePart('infMunDescarga');
+
+// Informações do CTe
+MDFeDataSet.IncludePart('infCTe');
+MDFeDataSet.SetFieldAsString('chCTe_49', '35230408187168000160570010000000011234567890');
+MDFeDataSet.SavePart('infCTe');
+
+// Informações específicas do modal Aquaviário
+MDFeDataSet.IncludePart('aquav');
+MDFeDataSet.SetFieldAsString('Irin_aquav_162', 'BR1234567');
+MDFeDataSet.SetFieldAsString('tpEmb_aquav_3', '30');
+MDFeDataSet.SetFieldAsString('cEmbar_aquav_4', 'EMB001');
+MDFeDataSet.SetFieldAsString('xEmbar_aquav_8', 'NAVIO CARGA GERAL');
+MDFeDataSet.SetFieldAsString('nViagem_aquav_5', '125');
+MDFeDataSet.SetFieldAsString('cPrtEmb_aquav_6', 'BRSSZ');
+MDFeDataSet.SetFieldAsString('cPrtDest_aquav_7', 'BRRIO');
+MDFeDataSet.SetFieldAsString('prtTrans_aquav_163', 'ITAJAI');
+MDFeDataSet.SetFieldAsString('tpNav_aquav_164', '1');
+MDFeDataSet.SetFieldAsString('MMSI_aquav_223', '123456789');
+MDFeDataSet.SavePart('aquav');
+
+// Informações do terminal de carregamento
+MDFeDataSet.IncludePart('infTermCarreg');
+MDFeDataSet.SetFieldAsString('cTermCarreg_aquav_9', 'BRSSZ01');
+MDFeDataSet.SetFieldAsString('xTermCarreg_aquav_10', 'TERMINAL PORTUARIO DE SANTOS');
+MDFeDataSet.SavePart('infTermCarreg');
+
+// Informações do terminal de descarregamento
+MDFeDataSet.IncludePart('infTermDescarreg');
+MDFeDataSet.SetFieldAsString('cTermDescarreg_aquav_11', 'BRRIO01');
+MDFeDataSet.SetFieldAsString('xTermDescarreg_aquav_12', 'TERMINAL DO RIO DE JANEIRO');
+MDFeDataSet.SavePart('infTermDescarreg');
+
+// Informações sobre a embarcação de combustível
+MDFeDataSet.IncludePart('infEmbComb');
+MDFeDataSet.SetFieldAsString('cEmbComb_aquav_13', 'BALSA01');
+MDFeDataSet.SetFieldAsString('xBalsa_aquav_165', 'BALSA ATLANTICA');
+MDFeDataSet.SavePart('infEmbComb');
+
+// Informações do seguro
+MDFeDataSet.IncludePart('seg');
+MDFeDataSet.SetFieldAsString('respSeg_153', '1');
+MDFeDataSet.SetFieldAsString('CNPJ_154', '11525644000110');
+MDFeDataSet.SetFieldAsString('xSeg_156', 'SEGUROS OCEANICOS S.A.');
+MDFeDataSet.SetFieldAsString('nApol_158', 'OCN20240001');
+MDFeDataSet.SetFieldAsString('CNPJ_157', '61198164000160');
+MDFeDataSet.SavePart('seg');
+
+// Informações de averbação
+MDFeDataSet.IncludePart('naver');
+
+MDFeDataSet.SetFieldAsString('nAver_159', 'AV202403001');
+MDFeDataSet.SavePart('naver');
+MDFeDataSet.Save;
+
+mOutput.Text := MDFeDataSet.LoteMdfe;
+edtChave.Text := GetValueChave(MDFeDataSet.LoteMdfe);
 end;
 
 initialization
