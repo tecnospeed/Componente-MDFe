@@ -1,4 +1,10 @@
-﻿## [11.1.0.2]
+﻿## [11.1.1.6]
+
+**Correção**
+
+* DSML-1925 - Incluido propriedade DiretorioLicense no componente e no MDFeX
+
+## [11.1.0.2]
 
 **Correção**
 hotfix - tlb quebrada para delphi 7
@@ -179,6 +185,7 @@ DSML-1066 - Foi alterado o RTM da versão 3.00a para mostrar as `Informações d
 **Correções:**
 
 - Alteração de funções que estavam sem retorno padrão.
+
 
 
 
