@@ -1,4 +1,11 @@
-﻿## [11.1.1.6]
+﻿## [11.1.7.10]
+
+**Novidades**
+
+* [DSML-1983](https://tecnospeed.atlassian.net/browse/DSML-1983) - Compatibilizando o componente com Delphi 13
+
+
+## [11.1.1.6]
 
 **Correção**
 
@@ -185,6 +192,7 @@ DSML-1066 - Foi alterado o RTM da versão 3.00a para mostrar as `Informações d
 **Correções:**
 
 - Alteração de funções que estavam sem retorno padrão.
+
 
 
 
