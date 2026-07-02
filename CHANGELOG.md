@@ -1,4 +1,11 @@
-﻿## [11.1.7.10]
+﻿## [11.1.7.12]
+
+**[BETA]**
+* [ODSML-29373](http://odoo.tecnospeed.local/odoo/project/40/tasks/29373) - NT 2026.004 Adequações CNPJ Alfanumérico
+
+
+
+## [11.1.7.10]
 
 **Novidades**
 
@@ -192,6 +199,7 @@ DSML-1066 - Foi alterado o RTM da versão 3.00a para mostrar as `Informações d
 **Correções:**
 
 - Alteração de funções que estavam sem retorno padrão.
+
 
 
 
